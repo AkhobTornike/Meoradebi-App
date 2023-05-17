@@ -1,0 +1,55 @@
+/* .LeftGreenLabel {
+    width: 42%;
+    height: 619px;
+    background-color: rgb(51, 225, 103);
+    float: left;
+    margin: -8px;
+}
+
+.LeftGreenLabel p {
+    color: white;
+    text-align: center;
+    margin-top:40%;
+    font-size: 100px;
+    font-family:cursive;
+} */
+
+.ParrenSignIn{
+    margin-top: 300px;
+    margin-left: 150px;
+    float: right;
+    margin-right: 300px;
+    position: fixed;
+    left: 55%;
+    top: 0%;
+}
+
+.welcome {
+    margin-top: -150px;
+    margin-right: -40px;
+    color: rgb(14, 163, 14);
+    font-size: 60px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+
+.Sent {
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgb(14, 163, 14);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size:20px;
+    color: white;
+    position: absolute;
+    left: 28%;
+}
+
+.ComeOn {
+    color: red;
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    position: fixed;
+    top: 70%;
+    left: 72.2%;
+}

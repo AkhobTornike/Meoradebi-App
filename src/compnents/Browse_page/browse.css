@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightgray;
+    padding: 10px;
+    z-index: 9999; /* Ensure the header appears on top of other elements */
+    background-color: green;
+  }
+  
+  .Name {
+    font-size: 24px;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size: 30px;
+    color: white;
+  }
+
+  .SearchLabel {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+  }
+  
+  .Search {
+    width: 300px;
+    height: 30px;
+    border-radius: 42px;
+    background-color: white;
+    text-align: center;
+  }
+  
+  .IconSearch {
+    font-size: 20px;
+    margin-left: 2%;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 10px;
+    margin-right: 10%;
+}
+  
+  .myCart,
+  .myProd,
+  .SignIn {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    color: white;
+  }
+
+  .parrentBox {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 110px;
+  }
+
+  .childBox {
+    width: calc(25% - 100px);
+    height: 250px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 17px;
+    overflow: hidden;
+  }
+
+  .childBox img, 
+  .childBox h6 {
+    max-width: 100%;max-height: 50%;
+  }
+
+  .textContainer {
+    display: flex;
+  }
+
+  .textContainer h6 {
+    margin-right: 10px;
+  }
+    
+  .seeMoreIcon {
+    width: 25px;
+    height: 25px;
+    color: green;
+    position: relative;
+    left: 170px;
+    bottom: 0;
+  }

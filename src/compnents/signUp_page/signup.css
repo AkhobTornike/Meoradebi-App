@@ -1,0 +1,62 @@
+/* .LeftGreenLabel {
+    background-color: rgb(51, 225, 103);
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+}
+
+p {
+    color: white;
+    text-align: center;
+    margin-top: 40%;
+    font-size: 100px;
+    font-family: cursive;
+    position: fixed;
+    bottom: 10%;
+    left: 10%;
+} */
+
+.welcome {
+    margin-top: -150px;
+    margin-right: -40px;
+    color: rgb(14, 163, 14);
+    font-size: 60px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+
+.ParrenSignIn {
+    margin-top: 250px;
+    margin-left: 150px;
+    float: right;
+    margin-right: 300px;
+    
+}
+
+
+.Password, .UserName {
+    margin: 5px;
+    background-color: rgb(14, 163, 14);
+    width: 250px;
+    height: 30px;
+    color: white;
+    border-radius: 42px;
+}
+
+.signIn {
+    margin-left: 55px;
+    margin-top: 10px;
+    width: 150px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgb(14, 163, 14);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size:20px;
+    color: white;
+}
+
+.BackMain{
+    color: green;
+    margin-left: 55px;
+}
