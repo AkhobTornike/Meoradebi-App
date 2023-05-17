@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./browse.css"
 import {FaPlusCircle} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Browsing() {
   const [products, setproducts] = useState([]);
@@ -30,13 +31,15 @@ function Browsing() {
     <div className='parrentBox'>
       {products.map((product) => (
         <>
-            <div className='childBox'>
-                <img src={product.image} alt={product.title} />
+            <div className='childBox' key={product.id}>
+                <img src={product.image} alt={product.title} /> 
                 <div className='textContainer'>
                 <h6>{shortenText(product.title, 15)}</h6>
                 <h6>{product.price} $</h6>
                 </div>
-                <FaPlusCircle className='seeMoreIcon'/>
+                <Link to={`/Browse/product/${product.id}`}>  
+                  <FaPlusCircle className='seeMoreIcon'/>
+                </Link>
             </div>
         </>
       ))}

@@ -1,26 +1,31 @@
-import { useState } from 'react'
+import React from "react"
 
-import Browsing from './compnents/Browse_page/browsingFunction'
 import Welcome from "./compnents/Welcom_Page/welcome"
 import SignUp from "./compnents/signUp_page/signup"
 import Forgot from "./compnents/forgot_page/forgot"
-import Browse from "./compnents/Browse_page/browse"
+import Browse from "./compnents/Browse_page/browse.jsx" 
+import ProductPage from "./compnents/Browse_page/product"
+import Papa from "./compnents/Browse_page/trysomething"
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ProductPageee from "./compnents/Browse_page/trysomething"
 
 function App() {
 
 
   return (
     <>
+    {/* <Papa/> */}
      <Router>
         <Routes>
           <Route path='/' element={<Welcome/>}/>
           <Route path='/signUp' element={<SignUp/>}/>
           <Route path='/forgotPassword' element={<Forgot/>}/>
-          <Route path='/Browse' element={<Browse/>}/>
+          <Route path='/Browse' element={<Browse/>}/> 
+          <Route path="/Browse/product/:id" element={<ProductPage/>}/>
         </Routes>
      </Router>
-     {/* <Browsing/> */}
+     {/* <Product/> */}
     </>
   )
 }
