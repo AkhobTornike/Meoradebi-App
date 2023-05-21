@@ -10,7 +10,6 @@ import MyProducts from "./compnents/My_Products/myProducts"
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ProductPageee from "./compnents/Browse_page/trysomething"
-import { AuthProvider } from "./compnents/Header/AuthContext"
 
 function App() {
 
@@ -18,7 +17,6 @@ function App() {
   return (
     <>
     {/* <Papa/> */}
-    <AuthProvider>
      <Router>
         <Routes>
           <Route path='/' element={<Welcome/>}/>
@@ -29,7 +27,6 @@ function App() {
           <Route path="/myProduct" element={<MyProducts/>}/>
         </Routes>
      </Router>
-    </AuthProvider>
 
      {/* <Product/> */}
     </>
