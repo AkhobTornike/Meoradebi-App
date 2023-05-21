@@ -4,17 +4,26 @@ import {FaPlusCircle} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 function Browsing() {
-  const [products, setproducts] = useState([]);
+
+  
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetchData();
+    const storedData = localStorage.getItem("productsData");
+    if (storedData) {
+      setProducts(JSON.parse(storedData));
+    } else {
+      fetchData();
+    }
   }, []);
 
   const fetchData = async () => {
     try {
       const response = await fetch('https://fakestoreapi.com/products/');
+      console.log(response);
       const jsonData = await response.json();
-      setproducts(jsonData);
+        setProducts(jsonData);
+        localStorage.setItem("productsData", JSON.stringify(jsonData));
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -26,6 +35,7 @@ function Browsing() {
     }
     return text.slice(0, maxLength) + '...'
   }
+
 
   return (
     <div className='parrentBox'>

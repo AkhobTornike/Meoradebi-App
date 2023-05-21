@@ -2,40 +2,28 @@ import React from "react"
 import { useEffect, useState } from "react" 
 import { useParams } from "react-router"
 import "./browse.css"
-import Header from "./Header"
+import Header from "../Header/Header"
 
 function ProductPage() {
-    const [product, setProduct] = useState(null)
     const { id } = useParams()
+    const storedData = JSON.parse(localStorage.getItem("productsData"));
 
-    useEffect(() => {
-        fetchData();
-    }, [])
-
-    const fetchData = async() => {
-        try {
-            const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-            const jsonData = await response.json()
-            setProduct(jsonData)
-        } catch (error) {
-            console.error("Error fetching data:", error)
-        }
-    }
-
+    const currentprod = storedData.filter((prod) => prod.id == id).map((fullProduct) => fullProduct);
+    console.log(currentprod + "string")
     return (
         <>
             <Header/>
-                {product ? (
+                {currentprod ? (
                     <>
                     <div className="aloneParentBox">
-                        <img src={product.image} alt={product.title} className="alonePicture"/>
+                        <img src={currentprod[0].image} alt={currentprod[0].title} className="alonePicture"/>
                         <div className="aloneTitleDiv">
-                        <p className="aloneTitle"><b>Title:</b> {product.title}</p>
+                        <p className="aloneTitle"><b>Title:</b> {currentprod[0].title}</p>
                         </div>
-                        <p className="alonePrice"><b>Price:</b> {product.price} $</p>
+                        <p className="alonePrice"><b>Price:</b> {currentprod[0].price} $</p>
                         <div className="AloneDescriptionDiv">
 
-                        <p className="AloneDescription"><b>Description</b><br/>{product.description}</p>
+                        <p className="AloneDescription"><b>Description</b><br/>{currentprod[0].description}</p>
                         </div>
                     </div>
                         </>

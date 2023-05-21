@@ -1,35 +1,209 @@
-import './Welcome.css'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './welcome.css'
 
 export default function Welcome() {
+  const [users, setUsers] = useState([]);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-    return (
-        <>            
+  useEffect(() => {
+    const storedUsersData = localStorage.getItem('usersData');
+    if (storedUsersData) {
+      setUsers(JSON.parse(storedUsersData));
+    } else {
+      fetchUsersData();
+    }
+  }, []);
 
-            <div className='ParrenSignIn'>
+  const fetchUsersData = async () => {
+    try {
+      const response = await fetch('https://fakestoreapi.com/users/');
+      const jsonUsersData = await response.json();
+      setUsers(jsonUsersData);
+      localStorage.setItem('usersData', JSON.stringify(jsonUsersData));
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
-                <p className='welcome'>Welcome</p>
-                {/* Down Username inptut */}
-                <input type="Email" className='UserName' placeholder=' Email' required/>
-                <br></br><br></br>
-                {/* Down Password inptut */}
-                <input type="password" className='Password' placeholder=' Password' required/>
-                <br></br><br></br><a href="./">
-                {/* Down Sign In Button */}
-                <Link to='/browse'><input className='signIn' type="button" value="Sign In" /></Link>
-                </a>
-                
-                <br></br><br></br>
-                <Link to='/forgotPassword' className='Fpassword'>forgot Password?</Link>
-                <br></br>
-                <Link to='/signUp' className='CaNaccount'>create a new account</Link>
-                    
-            </div>
+  const handleSignIn = (e) => {
+    e.preventDefault();
 
-            {/* Left Iland */}
-            {/* <div className='LeftGreenLabel'><p>MEORA<br></br>DEBI</p></div> */}
-            <div className='GreenLabel'><p>MEORA<br></br>DEBI</p></div>
+    const user = users.find(
+      (user) => user.email === email && user.password === password
+    );
 
-        </>
-    )
+    if (user) {
+      console.log('User signed in successfully');
+      navigate('/browse');
+    } else {
+      setError('Invalid email or password');
+      setEmail('');
+      setPassword('');
+    }
+  };
+
+  return (
+    <>
+      <div className="ParrenSignIn">
+        <p className="welcome">Welcome</p>
+        <form onSubmit={handleSignIn}>
+          <input
+            type="email"
+            className="UserName"
+            placeholder="Email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <br />
+          <br />
+          <input
+            type="password"
+            className="Password"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <br />
+          {error && <p>{error}</p>}
+          <br />
+          <input className="signIn" type="submit" value="Sign In" />
+        </form>
+        <br />
+        <br />
+        <a href="./">
+          <Link to="/forgotPassword" className="Fpassword">
+            Forgot Password?
+          </Link>
+        </a>
+        <br />
+        <Link to="/signUp" className="CaNaccount">
+          Create a new account
+        </Link>
+      </div>
+      <div className="GreenLabel">
+      <p className='meoradebi'>MEORA<br />DEBI</p>
+      </div>
+    </>
+  );
 }
+
+
+// import './welcome.css'
+// import { Link, useNavigate  } from 'react-router-dom'
+// import { useState, useEffect } from 'react'
+
+// export default function Welcome() {
+
+//     const [users, setUsers] = useState([])
+
+// useEffect(() => {
+//     const storedUsersData = localStorage.getItem("usersData")
+//     if (storedUsersData) {
+//         setUsers(JSON.parse(storedUsersData))
+//     } else {
+//         fetchUsersData()
+//     }
+// }, [])
+
+// const fetchUsersData = async () => {
+//     try {
+//         const response = await fetch ('https://fakestoreapi.com/users/')
+//         console.log(response)
+//         const jsonUsersData = await response.json()
+//         setUsers(jsonUsersData)
+//         localStorage.setItem("usersData", JSON.stringify(jsonUsersData))
+//     } catch {
+//         console.error('Error fetching data:', error)
+//     }
+// }
+
+// const { setIsSignedIn } = useContext(AuthContext);
+// const [email,setEmail] = useState("")
+// const [password,setPassword] = useState("")
+// const [error, setError] = useState("")
+// const navigate = useNavigate();
+
+// const handleSignIn = (e) => {
+//     e.preventDefault(); // Prevent form submission
+
+//     const user = users.find(
+//       (user) => user.email === email && user.password === password
+//     );
+
+//     if (user) {
+//       console.log('User signed in successfully');
+//     //   history.push('/browse');
+//     setIsSignedIn(true);
+//       navigate('/browse');
+//     } else {
+//       setError('');
+//       setEmail('');
+//       setPassword('');
+//       if (!email || !password) {
+//         setError('Please enter email and password');
+//       } else {
+//         setError('Invalid email or password');
+//       }
+//     }
+//   };
+
+//   const getEmailInputClassName = () => {
+//     return error && !email ? 'UserName error' : 'UserName';
+//   };
+
+//   const getPasswordInputClassName = () => {
+//     return error && !password ? 'Password error' : 'Password';
+//   };
+  
+//   return (
+//     <>
+//       <div className="ParrenSignIn">
+//         <p className="welcome">Welcome</p>
+//         <form onSubmit={handleSignIn}>
+//           <input
+//             type="email"
+//             className={getEmailInputClassName()}
+//             placeholder="Email"
+//             required
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//           />
+//           <br />
+//           <br />
+//           <input
+//             type="password"
+//             className={getPasswordInputClassName()}
+//             placeholder="Password"
+//             required
+//             value={password}
+//             onChange={(e) => setPassword(e.target.value)}
+//           />
+//           <br />
+//           {error && <p>{error}</p>}
+//           <br />
+//           <input className="signIn" type="submit" value="Sign In" />
+//         </form>
+//         <br />
+//         <br />
+//         <a href="./">
+//           <Link to="/forgotPassword" className="Fpassword">
+//             Forgot Password?
+//           </Link>
+//         </a>
+//         <br />
+//         <Link to="/signUp" className="CaNaccount">
+//           Create a new account
+//         </Link>
+//       </div>
+//       <div className="GreenLabel">
+//         <p className='meoradebi'>MEORA<br />DEBI</p>
+//       </div>
+//     </>
+//   );
+// }

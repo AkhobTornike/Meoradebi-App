@@ -6,7 +6,7 @@
     top: 0px;
 }
 
-p {
+.meoradebi {
     color: white;
     text-align: center;
     margin-top: 40%;
@@ -24,20 +24,20 @@ p {
     font-size: 60px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     position: relative;
-    left: -10%;
+    /* left: -10%; */
     top: 30px;
 }
 
 
-.ParrenSignIn {
-    margin-top: 300px;
+/* .ParrenSignIn {
+    margin-top: 200px;
     margin-left: 150px;
     float: right;
     margin-right: 300px;
     position: fixed;
     left: 60%;
     top: 0%;
-}
+} */
 
 
 .Password, .UserName {
@@ -48,6 +48,15 @@ p {
     color: white;
     border-radius: 42px;
 }
+
+.error {
+    border: 2px solid red; /* Error border color */
+  }
+
+.error-message {
+    color: black; /* Set desired text color */
+    padding: 0px;
+  }
 
 .signIn {
     margin-left: 55px;
