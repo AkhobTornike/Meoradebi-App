@@ -43,13 +43,12 @@ p {
     font-size: 60px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     position: relative;
-    /* left: -10%; */
-    top: 30px;
+    top: 55px;
 }
 
 
 .welcome {
-    margin-top: -150px;
+    margin-top: -250px;
     margin-right: -40px;
     color: rgb(14, 163, 14);
     font-size: 60px;
@@ -58,24 +57,39 @@ p {
 
 
 .ParrenSignIn {
-    margin-top: 250px;
+    margin-top: 115px;
     margin-left: 150px;
     float: right;
     margin-right: 300px;
     
 }
 
+.namediv {
+    display: flex;
+    margin-left: -40px;
+    margin-bottom: 10px;
+}
 
-.Password, .UserName {
+.firstname, .lastname {
+ margin-right: 10px;
+ background-color: rgb(14, 163, 14);
+ width: 100x;
+ height: 20px;
+ color: white;
+ border-radius: 42px;
+}
+
+.password, .email, .address, .phone, .username {
     margin: 5px;
     background-color: rgb(14, 163, 14);
     width: 250px;
-    height: 30px;
+    height: 20px;
     color: white;
     border-radius: 42px;
+    margin-bottom: 10px;
 }
 
-.signIn {
+.signUp {
     margin-left: 55px;
     margin-top: 10px;
     width: 150px;

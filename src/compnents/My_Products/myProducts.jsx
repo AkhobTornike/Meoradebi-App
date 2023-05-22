@@ -16,23 +16,6 @@ const MyProducts = () => {
         image: "",
       });
 
-    //   const handleChange = (e) => {
-    //     const { name, value, type, files } = e.target;
-    //     if (type === 'file' && files.length > 0) {
-    //       const file = files[0];
-    //       const imageUrl = URL.createObjectURL(file);
-    //       setNewdata((prevData) => ({
-    //         ...prevData,
-    //         [name]: imageUrl,
-    //       }));
-    //     } else {
-    //       setNewdata((prevData) => ({
-    //         ...prevData,
-    //         [name]: value,
-    //       }));
-    //     }
-    //   };
-
     const handleChange = (e) => {
         const { name, value, type, files } = e.target;
         if (type === 'file' && files.length > 0) {
@@ -53,14 +36,6 @@ const MyProducts = () => {
         }
       };
     
-    
-    //   const handleChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setNewdata((prevData) => ({
-    //       ...prevData,
-    //       [name]: value,
-    //     }));
-    //   };
       console.log(storedData)
 
       const AddNew = () => {
