@@ -29,7 +29,7 @@ export default function SignUp() {
             </div>
 
             {/* Left Iland */}
-            <div className='GreenLabel'><p>MEORA<br></br>DEBI</p></div>
+            <div className='GreenLabel'><p className='meoradebi'>MEORA<br></br>DEBI</p></div>
 
         </>
     )

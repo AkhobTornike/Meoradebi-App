@@ -17,6 +17,37 @@ p {
     left: 10%;
 } */
 
+.GreenLabel {
+    background-color: rgb(51, 225, 103);
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+}
+
+.meoradebi {
+    color: white;
+    text-align: center;
+    margin-top: 40%;
+    font-size: 100px;
+    font-family: cursive;
+    position: fixed;
+    bottom: 10%;
+    left: 10%;
+}
+
+.welcome {
+    margin-top: -150px;
+    margin-right: -40px;
+    color: rgb(14, 163, 14);
+    font-size: 60px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    position: relative;
+    /* left: -10%; */
+    top: 30px;
+}
+
+
 .welcome {
     margin-top: -150px;
     margin-right: -40px;
@@ -58,5 +89,5 @@ p {
 
 .BackMain{
     color: green;
-    margin-left: 55px;
+    margin-left: 45px;
 }

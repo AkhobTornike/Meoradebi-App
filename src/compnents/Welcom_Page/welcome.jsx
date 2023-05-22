@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import './welcome.css'
+
+export let isVariableTrue = false;
 
 export default function Welcome() {
   const [users, setUsers] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [isSignedIn, setIsSignedIn] = useState(false);
-  const history = useNavigate();
+  const [variable, setVariable] = useState(isVariableTrue)
 
   useEffect(() => {
     const storedUsersData = localStorage.getItem('usersData');
@@ -30,6 +31,8 @@ export default function Welcome() {
     }
   };
 
+  const navigate = useNavigate(); 
+
   const handleSignIn = (e) => {
     e.preventDefault();
 
@@ -39,13 +42,17 @@ export default function Welcome() {
 
     if (user) {
       console.log('User signed in successfully');
-      navigate('/browse');
+      navigate('./browse')
+      setVariable(true)
+      isVariableTrue = true;
     } else {
       setError('Invalid email or password');
       setEmail('');
       setPassword('');
     }
   };
+
+  console.log("response", variable)
 
   return (
     <>
@@ -73,7 +80,7 @@ export default function Welcome() {
           <br />
           {error && <p>{error}</p>}
           <br />
-          <input className="signIn" type="submit" value="Sign In" />
+          <input className="signIn" onClick={handleSignIn} type="submit" value="Sign In" />
         </form>
         <br />
         <br />
