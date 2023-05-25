@@ -1,61 +1,13 @@
-  .parrentBox {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 110px;
-  }
-
-  .childBox {
-    width: calc(25% - 100px);
-    height: 250px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 17px;
-    overflow: hidden;
-  }
-
-  .childBox img, 
-  .childBox h6 {
-    max-width: 100%;max-height: 50%;
-  }
-
-  .textContainer {
-    display: flex;
-  }
-
-  .textContainer h6 {
-    margin-right: 10px;
-  }
-    
-  .seeMoreIcon {
-    width: 25px;
-    height: 25px;
-    color: green;
-    position: relative;
-    left: 170px;
-    top: 15px;
-
-  }
-
-  .addCartIcon {
-      width: 25px;
-      height: 25px;
-      color: green;
-      position: relative;
-      left: 100px;
-      top: 15px;
-  }
-
-  /* .aloneParentBox {
+.productParentBox {
     position: relative;
     width: 1000px;
     height: 400px;
-    background-color: green;
+    background-color: rgb(4, 226, 4);
     margin-left: 140px;
     margin-top: 100px;
   }
 
-  .alonePicture {
+  .productPicture {
     position: absolute;
     top: 5px;
     left: 5px;
@@ -63,7 +15,7 @@
     height: 250px;
   }
 
-  .aloneTitle {
+  .productTitle {
     position: absolute;
     width: 440px;
     height: 80px;
@@ -72,7 +24,7 @@
     display: inline;
   }
 
-  .aloneTitle {
+  .productTitle {
     position: absolute;
     bottom: 30px;
     left: 5px;
@@ -86,7 +38,7 @@
     display: inline;
   }
 
-  .alonePrice {
+  .productPrice {
     position: absolute;
     left: 25px;
     bottom: 10px;
@@ -95,7 +47,7 @@
     font-family: none;
   }
 
-  .AloneDescriptionDiv{
+  .productDescriptionDiv{
     position: absolute;
     top: 5px;
     right: 5px;
@@ -103,7 +55,7 @@
     height: 390px;
   }
 
-  .AloneDescription {
+  .productDescription {
     position: inherit;
     word-wrap: break-word;
     word-break: break-all;
@@ -114,4 +66,45 @@
     font-size: small;
     font-family: none;
     text-align: center;
-  } */
+  }
+
+  .productAddCartIcon {
+    width: 65px;
+    height: 65px;
+    color: green;
+    position: relative;
+    left: 890px;
+    top: 290px;
+}
+
+.productAddCartIcon:hover {
+    color: rgb(135, 32, 3);
+}
+
+
+/* cart */
+
+.cartchildBox {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 110px;
+    width: 10%;
+    height: 250px;
+    background-color: green;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 17px;
+    overflow: hidden;
+  }
+
+  .cartTitle {
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 10px;
+  }
+
+  .cartPrice {
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 20px;
+  }

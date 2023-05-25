@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import "./browse.css"
+import { signedInUserId } from '../Welcom_Page/welcome.jsx';
+
 import {FaPlusCircle} from 'react-icons/fa';
+import { BsCartPlus } from 'react-icons/bs';
+
 import { Link } from 'react-router-dom';
 
 function Browsing() {
@@ -36,6 +40,17 @@ function Browsing() {
     return text.slice(0, maxLength) + '...'
   }
 
+  const addToCart = (productId, userId) => {
+    const newItem = {
+      id: 1,
+      userId: userId,
+      date: '23/05/2023-15:20',
+      products: { productId: productId, quantity: 1 }
+    };
+    // Example data, you can change it as per your requirements
+    console.log(newItem);
+    // Add your logic to handle adding the item to the cart
+  };
 
   return (
     <div className='parrentBox'>
@@ -50,6 +65,7 @@ function Browsing() {
                 <Link to={`/Browse/product/${product.id}`}>  
                   <FaPlusCircle className='seeMoreIcon'/>
                 </Link>
+                  <BsCartPlus onClick={() => addToCart(product.id, signedInUserId)} className='addCartIcon'/>
             </div>
         </>
       ))}

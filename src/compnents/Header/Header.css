@@ -18,17 +18,18 @@ body {
   }
   
   .Name {
-    font-size: 24px;
     font-weight: bold;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     font-size: 30px;
     color: white;
+    display: inline-block;
+    margin-left: 25px;
   }
 
   .SearchLabel {
     display: flex;
     align-items: center;
-    margin-left: 100px;
+    margin-left: 285px;
   }
   
   .Search {
@@ -41,13 +42,12 @@ body {
   
   .IconSearch {
     font-size: 20px;
-    margin-left: 2%;
   }
   
   .nav {
     display: flex;
-    gap: 10px;
-    margin-right: 10%;
+    gap: 50px;
+    margin-right: 6.5%;
 }
   
   .myCart,
@@ -57,4 +57,31 @@ body {
     color: black;
     font-weight: bold;
     color: white;
+  }
+
+  .SignInUntill {
+    font-weight: bold;
+    text-decoration: none;
+    color: red;
+  }
+
+  .hideLabels {
+    width: 90px;
+    height: 50px;
+    border: 1px solid black;
+    position: fixed;
+    right: 15px;
+    top: 64px;
+    display: none;
+  }
+
+  .signinlabel:hover + .hideLabels,
+  .hideLabels:hover,
+  .SignInUntill:hover + .hideLabels{
+    display: block;
+    background-color: white;
+  }
+
+  Link{
+    color: black;
   }

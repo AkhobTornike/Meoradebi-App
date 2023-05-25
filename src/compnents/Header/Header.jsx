@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 
 import './Header.css'
 
-import {FaSearch} from 'react-icons/fa';
+import {FaSearch, FaUserAlt, FaSignOutAlt } from 'react-icons/fa';
+import { BsFillCartFill, BsInfoSquareFill } from 'react-icons/bs';
+import { MdBookmarkBorder} from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { isVariableTrue } from '../Welcom_Page/welcome';
 
@@ -10,13 +12,18 @@ const Header = () => {
 
     console.log("isvariabletrue response: ", isVariableTrue)
 
+    function refreshPage() {
+        location.reload();
+        isVariableTrue = False
+      }
+
   return (
             <header>
                 {
                     // There is Name of website Left side
                 }
                 {isVariableTrue ? (
-                        <Link to="/browse">
+                    <Link to="/browse">
                         <label className='Name'>
                             MEORA<br/>DEBI
                         </label>
@@ -24,11 +31,11 @@ const Header = () => {
                     </Link>
                 ) : (   
                     <Link to="/">
-                    <label className='Name'>
-                        MEORA<br/>DEBI
-                    </label>
-                    <br/>
-                </Link>
+                        <label className='Name'>
+                            MEORA<br/>DEBI
+                        </label>
+                        <br/>
+                    </Link>
                 )}
 
 
@@ -43,15 +50,41 @@ const Header = () => {
                 {/* There is navigation menu */}
                 {isVariableTrue ? (
                     <div className='nav'>                
-                        <label ><Link to='/myProduct' className='myProd'>My Products</Link></label>
-                        <label ><Link className='SignIn' to='/browse'>Sign In</Link></label>
-                        <label ><Link to='/browse' className='myCart'>My Cart</Link></label>
+                        <label ><Link to='/myProduct' className='myProd'><MdBookmarkBorder/></Link></label>
+                        <label ><Link to='/myCart' className='myCart'><BsFillCartFill/></Link></label>
+                        <label className='signinlabel'><Link className='SignIn' to='/browse'><FaUserAlt/></Link></label>
+                        <div className='hideLabels'>
+                            {/* <Link to=''> */}
+                                <label className='profile'>
+                                    &nbsp;<BsInfoSquareFill/>&ensp;Profile
+                                </label>
+                            {/* </Link> */}
+                            
+                            <Link to='/'>
+                                <label onClick={() => refreshPage()} className='signOut'>
+                                    &nbsp;<FaSignOutAlt/>&ensp;SignOut
+                                </label>
+                            </Link>
+                        </div>
                     </div>
                 ) : (
                     <div className='nav'>                
-                        <label ><Link to='/' className='myCart'>My Cart</Link></label>
-                        <label ><Link to='/' className='myProd'>My Products</Link></label>
-                        <label ><Link className='SignIn' to='/'>Sign In</Link></label>
+                        <label ><Link to='/' className='myProd'><MdBookmarkBorder/></Link></label>
+                        <label ><Link to='/' className='myCart'><BsFillCartFill/></Link></label>
+                        <label className='SignInUntill' ><Link className='SignInUntill' to='/'><FaUserAlt/></Link></label>
+                        <div className='hideLabels'>
+                            <label className='profile' onClick={() => {alert('Yor are not sign in So you go back in Welcome page and please sign in');}}>
+                                    <Link to='/'>
+                                        &nbsp;<BsInfoSquareFill/>&ensp;Profile
+                                    </Link>
+                            </label>
+                            
+                            <label className='signOut'>
+                                <Link to='/'>
+                                    &nbsp;<FaSignOutAlt/>&ensp;SignIn
+                                </Link>
+                            </label>
+                        </div>
                     </div>
                 )}
 
