@@ -8,7 +8,16 @@ import { MdBookmarkBorder} from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { isVariableTrue } from '../Welcom_Page/welcome';
 
-const Header = () => {
+const Header = ({ onSearch }) => {
+
+    const [searchTerm, setSearchTerm] = useState('');
+  
+    const handleSearch = (event) => {
+      const { value } = event.target;
+      setSearchTerm(value);
+      onSearch(value);
+    };
+  
 
     console.log("isvariabletrue response: ", isVariableTrue)
 
@@ -17,7 +26,7 @@ const Header = () => {
         isVariableTrue = False
       }
 
-  return (
+      return (
             <header>
                 {
                     // There is Name of website Left side
@@ -43,7 +52,13 @@ const Header = () => {
                     // There is websites Search value
                 }
                 <label className='SearchLabel'>
-                    <input type="text" placeholder='Search' className='Search'/>
+                    <input
+                     type="text" 
+                     placeholder='Search' 
+                     className='Search'
+                     value={searchTerm}
+                     onChange={handleSearch}
+                     />
                     <FaSearch className='IconSearch'/>
                 </label>
                 <br/><br/>
