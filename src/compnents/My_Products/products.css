@@ -84,16 +84,20 @@
 
 /* cart */
 
-.cartchildBox {
+  .parentBox{
+    margin-top: 150px;
+  }
+
+  .cartchildBox {
     display: flex;
     flex-wrap: wrap;
     margin-top: 110px;
-    width: 10%;
-    height: 250px;
+    margin-left: 5.25%;
+    width: 90%;
+    height: 350px;
     background-color: green;
     border: 1px solid black;
     border-radius: 5px;
-    margin: 17px;
     overflow: hidden;
   }
 
@@ -107,4 +111,36 @@
     font-size: x-large;
     font-family: 'Times New Roman', Times, serif;
     margin-left: 20px;
+  }
+
+  .cartQuantity {
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 20px;
+  }
+
+  .doneIcon {
+    width: 50px;
+    height: 50px;
+    color: white;
+
+  }
+
+  .linkDoneIcon {
+    position: fixed;
+    right: 80px;
+    bottom: 90px;
+  }
+
+  .cartchildBox img {
+    max-width: 50%;
+  }
+
+  .noProductsMessage {
+    position: fixed;
+    left: 38%;
+    top: 50%;
+    right: 38%;
+    bottom: 50%;
+    color: red;
   }

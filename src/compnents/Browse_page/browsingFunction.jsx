@@ -41,12 +41,67 @@ function Browsing() {
   }
 
   const addToCart = (productId, userId) => {
+    const now = new Date();
+    const date = now.toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+    });
+    const time = now.toLocaleTimeString('en-US', {
+      hour12: false,
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    });
+
+    const dateTimeString = `${date}:${time}`;
+
+    const existingCartData = localStorage.getItem('cardData');
+    let cartData = [];
+  
+    if (existingCartData) {
+      cartData = JSON.parse(existingCartData);
+    }
+
+    let quantityString;
+    let quantity;
+  
+    while (true) {
+      quantityString = window.prompt('Enter the quantity:');
+  
+      // Validate if the quantity is a number
+      if (/^\d+$/.test(quantityString)) {
+        quantity = parseInt(quantityString);
+        break;
+      }
+  
+      // Display error message if the quantity is not a number
+      window.alert('Please enter a valid quantity (numbers only).');
+    }
+  
+    // Calculate the new item id
+    const newItemId = cartData.length > 0 ? cartData[cartData.length - 1].id + 1 : 1;
+  
     const newItem = {
-      id: 1,
+      id: newItemId,
       userId: userId,
-      date: '23/05/2023-15:20',
-      products: { productId: productId, quantity: 1 }
+      date: dateTimeString,
+      products: { productId: productId, quantity: quantity  },
     };
+  
+    // Add newItem to the cartData
+    cartData.push(newItem);
+  
+    // Store updated cartData in localStorage
+    localStorage.setItem('cardData', JSON.stringify(cartData));
+
+
+    // const newItem = {
+    //   id: 1,
+    //   userId: userId,
+    //   date: dateTimeString,
+    //   products: { productId: productId, quantity: 1 }
+    // };
     // Example data, you can change it as per your requirements
     console.log(newItem);
     // Add your logic to handle adding the item to the cart
@@ -65,7 +120,9 @@ function Browsing() {
                 <Link to={`/Browse/product/${product.id}`}>  
                   <FaPlusCircle className='seeMoreIcon'/>
                 </Link>
+                <Link to={`/Browse/mycart/${product.id}`}>
                   <BsCartPlus onClick={() => addToCart(product.id, signedInUserId)} className='addCartIcon'/>
+                </Link>
             </div>
         </>
       ))}

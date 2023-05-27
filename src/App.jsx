@@ -7,6 +7,7 @@ import Browse from "./compnents/Browse_page/browse.jsx"
 import ProductPage from "./compnents/My_Products/product"
 import MyProducts from "./compnents/My_Products/myProducts"
 import Cart from "./compnents/My_Products/cart"
+import CartBrowsing from "./compnents/My_Products/browsingCarts"
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Browse/product/:id" element={<ProductPage/>}/>
           <Route path="/myProduct" element={<MyProducts/>}/>
           <Route path="/Browse/mycart/:id" element={<Cart/>}/>
+          <Route path="/Browse/mycarts" element={<CartBrowsing/>}/>
         </Routes>
      </Router>
 

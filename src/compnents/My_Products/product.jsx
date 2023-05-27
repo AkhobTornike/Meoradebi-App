@@ -11,9 +11,12 @@ import Header from "../Header/Header"
 function ProductPage() {
     const { id } = useParams()
     const storedData = JSON.parse(localStorage.getItem("productsData"));
-
+    
     const currentprod = storedData.filter((prod) => prod.id == id).map((fullProduct) => fullProduct);
+    
+
     console.log("currentprod: " +  currentprod[0].id)
+
     return (
         <>
             <Header/>

@@ -51,7 +51,7 @@ const Header = () => {
                 {isVariableTrue ? (
                     <div className='nav'>                
                         <label ><Link to='/myProduct' className='myProd'><MdBookmarkBorder/></Link></label>
-                        <label ><Link to='/myCart' className='myCart'><BsFillCartFill/></Link></label>
+                        <label ><Link to='/Browse/mycarts' className='myCart'><BsFillCartFill/></Link></label>
                         <label className='signinlabel'><Link className='SignIn' to='/browse'><FaUserAlt/></Link></label>
                         <div className='hideLabels'>
                             {/* <Link to=''> */}
