@@ -2,6 +2,9 @@ import React from 'react'
 import Header from '../Header/Header';
 import { useState } from 'react'
 
+import { Link } from 'react-router-dom';
+
+
 const MyProducts = () => {
     const storedData = JSON.parse(localStorage.getItem("productsData"));
     const lastItemId = storedData ? storedData[storedData.length - 1].id : 20;
@@ -49,6 +52,8 @@ const MyProducts = () => {
         setCounter(counter + 1);
         console.log(updatedData);
         localStorage.setItem('productsData', JSON.stringify(updatedData));
+        alert("new product is Add")
+
       };
 
   return (
@@ -89,7 +94,9 @@ const MyProducts = () => {
         //   value={newdata.image}
           onChange={handleChange}
         /><br/>
-        <input onClick={() => AddNew()} type="button" value="Submit" />
+        <Link to='/browse'>
+          <input onClick={() => AddNew()} type="button" value="Submit" />
+        </Link>
     </>
   )
 }

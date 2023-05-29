@@ -9,6 +9,7 @@ import ProductPage from "./compnents/My_Products/product"
 import MyProducts from "./compnents/My_Products/myProducts"
 import Cart from "./compnents/My_Products/cart"
 import CartBrowsing from "./compnents/My_Products/browsingCarts"
+import MyProfile from "./compnents/signUp_page/profile"
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/myProduct" element={<MyProducts/>}/>
           <Route path="/Browse/mycart/:id" element={<Cart/>}/>
           <Route path="/Browse/mycarts" element={<CartBrowsing/>}/>
+          <Route path="/Browse/MyProfile" element={<MyProfile/>}/>
         </Routes>
      </Router>
 

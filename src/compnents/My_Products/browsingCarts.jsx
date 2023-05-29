@@ -38,7 +38,7 @@ import { signedInUserId } from '../Welcom_Page/welcome';
                         <div className="carttextContainer">
                           <h6 className="">Title: {validprod.title}</h6>
                           <h6 className="">Price: {validprod.price}</h6>
-                          <h6 className="cartQuantity">Quantity:</h6>
+                          <h6 className="cartQuantity">Quantity: {product.products.quantity}</h6>
                         </div>
                       </div>
                     </>

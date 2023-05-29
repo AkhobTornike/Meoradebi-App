@@ -70,9 +70,9 @@ const Header = ({ onSearch }) => {
                         <label className='signinlabel'><Link className='SignIn' to='/browse'><FaUserAlt/></Link></label>
                         <div className='hideLabels'>
                             {/* <Link to=''> */}
-                                <label className='profile'>
+                                <Link to='MyProfile' className='profile'>
                                     &nbsp;<BsInfoSquareFill/>&ensp;Profile
-                                </label>
+                                </Link>
                             {/* </Link> */}
                             
                             <Link to='/'>

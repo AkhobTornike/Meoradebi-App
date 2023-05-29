@@ -7,6 +7,7 @@ export default function SignUp() {
     const storeUsersData = JSON.parse(localStorage.getItem('usersData'))
     const lastUserID = storeUsersData ? storeUsersData[storeUsersData.length - 1].id : 10;
     const [counter, setCounter] = useState(lastUserID)
+    
 
     const [newuser, setNewuser] = useState({
         address: "",
@@ -19,29 +20,79 @@ export default function SignUp() {
 
     })
 
+    const [passwordError, setPasswordError] = useState(false);
+
+
     const handleChange = (e) => {
         const { name, value } = e.target;
-      
-        setNewuser((prevUser) => ({
-          ...prevUser,
-          [name]: value,
-        }));
+    
+        if (name === 'firstname' || name === 'lastname') {
+          setNewuser((prevUser) => ({
+            ...prevUser,
+            name: {
+              ...prevUser.name,
+              [name]: value,
+            },
+          }));
+        } else {
+          setNewuser((prevUser) => ({
+            ...prevUser,
+            [name]: value,
+          }));
+        }
       };
 
       const Addnew = () => {
-        const updateUser = [
+        const requiredFields = ['firstname', 'lastname', 'email', 'password', 'address', 'phone', 'username'];
 
-            ...storeUsersData,
-            {
-                ...newuser,
-                id: counter + 1,
-            },
-        ]
-        setCounter(counter +1)
-        console.log(updateUser)
-        localStorage.setItem('usersData', JSON.stringify(updateUser))
-      }
-      console.log(storeUsersData);
+        for (const field of requiredFields) {
+          if (!newuser[field]) {
+            alert(`Please enter ${field} field`);
+            return;
+          }
+        }
+    
+        if (newuser.password !== newuser.confirmPassword) {
+          alert('Passwords do not match');
+          return;
+        }
+    
+        const { confirmPassword, ...userWithoutConfirmPassword } = newuser;
+    
+        const updateUser = [
+          ...storeUsersData,
+          {
+            ...userWithoutConfirmPassword,
+            id: counter + 1,
+          },
+        ];
+        setCounter(counter + 1);
+        console.log(updateUser);
+        localStorage.setItem('usersData', JSON.stringify(updateUser));
+      };
+
+    //   const Addnew = () => {
+    //     const { password, confirmPassword } = newuser;
+
+    //     if (password !== confirmPassword) {
+    //         // Passwords don't match, display an error message or handle it as desired
+    //         console.log("Passwords don't match");
+    //         return;
+    //       }
+
+    //     const updateUser = [
+
+    //         ...storeUsersData,
+    //         {
+    //             ...newuser,
+    //             id: counter + 1,
+    //         },
+    //     ]
+    //     setCounter(counter +1)
+    //     console.log(updateUser)
+    //     localStorage.setItem('usersData', JSON.stringify(updateUser))
+    //   }
+    //   console.log(storeUsersData);
 
     return (
         <>            
@@ -55,18 +106,18 @@ export default function SignUp() {
                         className='firstname' 
                         placeholder=' username : '
                         name='firstname'
-                        value={newuser.name.username}
+                        value={newuser.name.firstname}
                         onChange={handleChange}
                         required
                     />
                     <input 
-                        type="text" 
-                        className='lastname' 
-                        placeholder=' lastName : '
-                        name='lastName' 
-                        value={newuser.name.username}
-                        onChange={handleChange}
-                        required
+                            type="text" 
+                            className='lastname' 
+                            placeholder=' lastname : '
+                            name='lastname'
+                            value={newuser.name.lastname}
+                            onChange={handleChange}
+                            required
                     />
                 </div>
                 {/* <br/> */}
@@ -94,9 +145,12 @@ export default function SignUp() {
                 {/* <br/><br/> */}
                 {/* Down Password Confim inptut */}
                 <input 
-                    type="password" 
-                    className='password' 
-                    placeholder=' Confrim Password : ' 
+                    type="password"
+                    className="password"
+                    placeholder="Confirm Password:"
+                    name="confirmPassword"
+                    value={newuser.confirmPassword}
+                    onChange={handleChange}
                     required
                 />
                 {/* <br/><br/> */}
