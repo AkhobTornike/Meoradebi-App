@@ -21,7 +21,7 @@ export default function Forgot() {
                 <input onClick={() => {
                     setPass(true);
                     setInputValue("");
-                }} type="button" value="Sent" className="Sent"/>
+                }} type="button" value="Send" className="Sent"/>
                 {pass && <ReceivePassword/>}
 
             </div>

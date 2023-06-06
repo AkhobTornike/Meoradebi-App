@@ -14,12 +14,12 @@ body {
     background-color: lightgray;
     padding: 10px;
     z-index: 9999; 
-    background-color: green;
+    background-color: rgba(185,235,80,255);
   }
   
   .Name {
     font-weight: bold;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-family:'JejuHallasan';
     font-size: 30px;
     color: white;
     display: inline-block;
@@ -38,10 +38,18 @@ body {
     border-radius: 42px;
     background-color: white;
     text-align: center;
-  }
+    border: none;
+    outline: none;
+    
+    
+}
+
+ 
   
   .IconSearch {
     font-size: 20px;
+    margin-left: 15px;
+    color: white;
   }
   
   .nav {
