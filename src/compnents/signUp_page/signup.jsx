@@ -42,16 +42,24 @@ export default function SignUp() {
         }
       };
 
-      const Addnew = () => {
+      const validateForm = () => {
         const requiredFields = ['firstname', 'lastname', 'email', 'password', 'address', 'phone', 'username'];
-
+    
         for (const field of requiredFields) {
-          if (!newuser[field]) {
-            alert(`Please enter ${field} field`);
-            return;
+          if (!newuser[field].trim()) {
+            return false;
           }
         }
     
+        return true;
+      };
+
+      const Addnew = () => {
+        if (!validateForm()) {
+          alert('Please fill in all fields');
+          return;
+        }
+        
         if (newuser.password !== newuser.confirmPassword) {
           alert('Passwords do not match');
           return;
@@ -71,29 +79,6 @@ export default function SignUp() {
         localStorage.setItem('usersData', JSON.stringify(updateUser));
       };
 
-    //   const Addnew = () => {
-    //     const { password, confirmPassword } = newuser;
-
-    //     if (password !== confirmPassword) {
-    //         // Passwords don't match, display an error message or handle it as desired
-    //         console.log("Passwords don't match");
-    //         return;
-    //       }
-
-    //     const updateUser = [
-
-    //         ...storeUsersData,
-    //         {
-    //             ...newuser,
-    //             id: counter + 1,
-    //         },
-    //     ]
-    //     setCounter(counter +1)
-    //     console.log(updateUser)
-    //     localStorage.setItem('usersData', JSON.stringify(updateUser))
-    //   }
-    //   console.log(storeUsersData);
-
     return (
         <>            
 
@@ -104,7 +89,7 @@ export default function SignUp() {
                     <input 
                         type="text" 
                         className='firstname' 
-                        placeholder=' username : '
+                        placeholder=' firstname : '
                         name='firstname'
                         value={newuser.name.firstname}
                         onChange={handleChange}
@@ -120,8 +105,6 @@ export default function SignUp() {
                             required
                     />
                 </div>
-                {/* <br/> */}
-                {/* Down Username inptut */}
                 <input 
                     type="Email" 
                     className='email' 
@@ -131,8 +114,6 @@ export default function SignUp() {
                     onChange={handleChange}
                     required
                 />
-                {/* <br/><br/> */}
-                {/* Down Password inptut */}
                 <input 
                     type="password" 
                     className='password' 
@@ -142,8 +123,6 @@ export default function SignUp() {
                     onChange={handleChange}
                     required
                 />
-                {/* <br/><br/> */}
-                {/* Down Password Confim inptut */}
                 <input 
                     type="password"
                     className="password"
@@ -153,7 +132,6 @@ export default function SignUp() {
                     onChange={handleChange}
                     required
                 />
-                {/* <br/><br/> */}
                 <input 
                     type="text" 
                     className='address' 
@@ -163,7 +141,6 @@ export default function SignUp() {
                     onChange={handleChange}
                     required
                 />
-                {/* <br/><br/> */}
                 <input 
                     type="phone" 
                     className='phone' 
@@ -173,7 +150,6 @@ export default function SignUp() {
                     onChange={handleChange}
                     required
                 />
-                {/* <br/><br/> */}
                 <input 
                     type="text" 
                     className='username' 
@@ -183,17 +159,12 @@ export default function SignUp() {
                     onChange={handleChange}
                     required
                 />
-                {/* Down Sign In Button */}
-                {/* <br/><br/> */}
                 <a href="./">
                 <input className='signUp' onClick={() => Addnew()} type="button" value="Sign Up" />
                 </a>
-                {/* <br/><br/> */}
+                <br/><br/>
                 <Link to='/' className='BackMain' href>already have an account?</Link>
-
             </div>
-
-            {/* Left Iland */}
             <div className='GreenLabel'><p className='meoradebi'>MEORA<br></br>DEBI</p></div>
 
         </>

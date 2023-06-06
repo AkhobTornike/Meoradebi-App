@@ -1,6 +1,8 @@
 import React from "react";
 import "./products.css"
 
+import { useNavigate } from "react-router-dom";
+
 import { useEffect, useState } from "react";
 
 import Header from "../Header/Header";
@@ -10,6 +12,7 @@ import { signedInUserId } from '../Welcom_Page/welcome';
   function CartBrowsing() {
       const [carddata, setCarddata] = useState([])
       const [productdata, setProductdata] = useState([])
+      const navigate = useNavigate();
 
       useEffect(() => {
         const cardData = localStorage.getItem("cardData")
@@ -17,13 +20,19 @@ import { signedInUserId } from '../Welcom_Page/welcome';
       }, [])
 
       const evenCardData = carddata.filter((card) => card.userId === signedInUserId)
-      console.log(evenCardData)
 
       useEffect(() => {
         const storedData = localStorage.getItem("productsData");
         setProductdata(JSON.parse(storedData))
       }, [])
-
+      
+      useEffect(() => {
+        if (evenCardData.length === 0) {
+          // If there are no items in the cart, show an alert and navigate back to the browse page
+          alert('You have no products in your cart');
+          navigate('/browse'); // Replace '/browse' with the actual URL for your browse page
+        }
+      }, [evenCardData, navigate]);
 
       return (
           <>
