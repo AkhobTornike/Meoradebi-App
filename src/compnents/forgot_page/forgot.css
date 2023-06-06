@@ -11,28 +11,31 @@
 .welcome {
     margin-top: -150px;
     margin-right: -40px;
-    color: rgb(14, 163, 14);
-    font-size: 60px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    color: rgba(185,235,80,255);
+    font-size: 90px;
+    font-family:'Chau Philomene One' ;
 }
 
 
 .Sent {
     width: 100px;
-    height: 30px;
+    height: 40px;
     border-radius: 25px;
-    background-color: rgb(14, 163, 14);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    background-color: rgba(185,235,80,255);
+    font-family:'Chau Philomene One' ;
     font-size:20px;
     color: white;
     position: absolute;
     left: 28%;
+    border: none;
+    outline: none;
+    text-align: center;
 }
 
 .ComeOn {
     color: red;
     font-size: 30px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-family:'Chau Philomene One' ;
     position: fixed;
     top: 70%;
     left: 72.2%;

@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 110px;
+    
   }
 
   .childBox {
@@ -30,7 +31,7 @@
   .seeMoreIcon {
     width: 25px;
     height: 25px;
-    color: green;
+    color: rgba(185,235,80,255);
     position: relative;
     left: 170px;
     top: 15px;
@@ -40,7 +41,7 @@
   .addCartIcon {
       width: 25px;
       height: 25px;
-      color: green;
+      color: rgba(185,235,80,255);
       position: relative;
       left: 100px;
       top: 15px;
@@ -50,7 +51,7 @@
     position: relative;
     width: 1000px;
     height: 400px;
-    background-color: green;
+    background-color: rgba(185,235,80,255);
     margin-left: 140px;
     margin-top: 100px;
   }

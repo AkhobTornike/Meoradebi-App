@@ -46,7 +46,7 @@ export default function SignUp() {
         const requiredFields = ['firstname', 'lastname', 'email', 'password', 'address', 'phone', 'username'];
 
         for (const field of requiredFields) {
-          if (!newuser[field]) {
+          if (newuser[field]) {
             alert(`Please enter ${field} field`);
             return;
           }

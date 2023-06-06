@@ -1,5 +1,5 @@
 .GreenLabel {
-    background-color: rgb(51, 225, 103);
+    background-color: rgba(185,235,80,255);
     width: 50%;
     height: 100%;
     position: fixed;
@@ -11,7 +11,7 @@
     text-align: center;
     margin-top: 40%;
     font-size: 100px;
-    font-family: cursive;
+    font-family:'Chau Philomene One' ;
     position: fixed;
     bottom: 10%;
     left: 10%;
@@ -20,23 +20,50 @@
 .welcome {
     margin-top: -150px;
     margin-right: -40px;
-    color: rgb(14, 163, 14);
-    font-size: 60px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    color: rgba(185,235,80,255);
+    font-size: 90px;
+    font-family:'Chau Philomene One' ;
     position: relative;
     /* left: -10%; */
     top: 30px;
 }
 
 
-.Password, .UserName {
+.UserName {
     margin: 5px;
-    background-color: rgb(14, 163, 14);
+    background-color: rgba(224,255,158,255);
     width: 250px;
     height: 30px;
     color: white;
     border-radius: 42px;
+    border: none;
+    outline: none;
+    text-align: center;
 }
+.Password {
+    margin: 5px;
+    background-color: rgba(224,255,158,255);
+    width: 250px;
+    height: 30px;
+    color: white;
+    border-radius: 42px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+.Password::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+    font-size: 25px;
+    margin-left: 100px;
+  }
+ 
+.UserName::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+    font-size: 25px;
+  }
+  
 
 .error {
     border: 2px solid red; /* Error border color */
@@ -51,15 +78,17 @@
     margin-left: 55px;
     margin-top: 10px;
     width: 150px;
-    height: 30px;
+    height: 40px;
     border-radius: 25px;
-    background-color: rgb(14, 163, 14);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    background-color: rgba(185,235,80,255);
+    font-family:'Chau Philomene One' ;
     font-size:20px;
     color: white;
+    border: none;
+    outline: none;
 }
 
 .Fpassword, .CaNaccount {
-    color: green;
+    color: rgba(185,235,80,255);
     margin-left: 60px;
 }
