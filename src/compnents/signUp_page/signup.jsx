@@ -45,12 +45,14 @@ export default function SignUp() {
       const validateForm = () => {
         const requiredFields = ['firstname', 'lastname', 'email', 'password', 'address', 'phone', 'username'];
     
-        for (const field of requiredFields) {
-          if (!newuser[field].trim()) {
-            return false;
+          for (const field of requiredFields) {
+            if (newuser[field]) {
+              alert(`Please enter ${field} field`);
+              return;
+            }
           }
-    
-        return true;
+      
+          return true;
       };
 
       const Addnew = () => {
@@ -168,5 +170,4 @@ export default function SignUp() {
 
         </>
     )
-}
 }
