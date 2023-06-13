@@ -49,7 +49,6 @@ export default function SignUp() {
           if (!newuser[field].trim()) {
             return false;
           }
-        }
     
         return true;
       };
@@ -169,4 +168,5 @@ export default function SignUp() {
 
         </>
     )
+}
 }
