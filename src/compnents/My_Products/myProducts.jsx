@@ -58,6 +58,7 @@ const MyProducts = () => {
 
   return (
     <>
+    <div className="addProduct">
         <Header/>
         <h3>Name</h3>
         <input
@@ -97,6 +98,7 @@ const MyProducts = () => {
         <Link to='/browse'>
           <input onClick={() => AddNew()} type="button" value="Submit" />
         </Link>
+        </div>
     </>
   )
 }

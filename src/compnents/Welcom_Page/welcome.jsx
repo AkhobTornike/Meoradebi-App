@@ -86,6 +86,7 @@ export default function Welcome() {
         </form>
         <br />
         <br />
+        <div className="options">
         <a href="./">
           <Link to="/forgotPassword" className="Fpassword">
             Forgot Password?
@@ -95,6 +96,7 @@ export default function Welcome() {
         <Link to="/signUp" className="CaNaccount">
           Create a new account
         </Link>
+        </div>
       </div>
       <div className="GreenLabel">
       <p className='meoradebi'>MEORA<br />DEBI</p>

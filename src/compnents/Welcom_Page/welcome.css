@@ -34,7 +34,7 @@
     background-color: rgba(224,255,158,255);
     width: 250px;
     height: 30px;
-    color: white;
+    color: black;
     border-radius: 42px;
     border: none;
     outline: none;
@@ -45,7 +45,7 @@
     background-color: rgba(224,255,158,255);
     width: 250px;
     height: 30px;
-    color: white;
+    color: black;
     border-radius: 42px;
     border: none;
     outline: none;
@@ -87,8 +87,11 @@
     border: none;
     outline: none;
 }
-
+.options{
+text-align: center;
+}
 .Fpassword, .CaNaccount {
     color: rgba(185,235,80,255);
-    margin-left: 60px;
+ 
+ 
 }

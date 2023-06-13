@@ -1,6 +1,6 @@
 .ParrenSignIn{
     margin-top: 250;
-    margin-left: 150px;
+    margin-left: 230px;
     float: right;
     margin-right: 300px;
     position: fixed;
@@ -9,8 +9,9 @@
 }
 
 .welcome {
-    margin-top: -150px;
-    margin-right: -40px;
+    margin-top: 40px;
+    margin-left: -40px;
+ text-align: center;
     color: rgba(185,235,80,255);
     font-size: 90px;
     font-family:'Chau Philomene One' ;

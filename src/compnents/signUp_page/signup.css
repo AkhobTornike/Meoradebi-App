@@ -18,7 +18,7 @@ p {
 } */
 
 .GreenLabel {
-    background-color: rgba(224,255,158,255);
+    background-color: rgba(185,235,80,255);
     width: 50%;
     height: 100%;
     position: fixed;
@@ -75,7 +75,7 @@ p {
  background-color: rgba(224,255,158,255);
  width: 50x;
  height: 30px;
- color: white;
+ color: black;
  border-radius: 42px;
  border: none;
  outline: none;
@@ -83,7 +83,7 @@ p {
 }
 
 .firstname, .lastname ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
+    color: black;
     opacity: 1; /* Firefox */
   
   }
@@ -93,7 +93,7 @@ p {
     background-color: rgba(224,255,158,255);
     width: 250px;
     height: 30px;
-    color: white;
+    color: black;
     border-radius: 42px;
     margin-bottom: 10px;
     border: none;
@@ -101,7 +101,7 @@ p {
     text-align: center;
 }
 .password, .email, .address, .phone, .username ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
+    color: black;
     opacity: 1; /* Firefox */
   
   }
@@ -121,6 +121,6 @@ p {
 }
 
 .BackMain{
-    color: rgba(224,255,158,255);
+    color: rgba(185,235,80,255);
     margin-left: 45px;
 }
