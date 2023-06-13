@@ -6,10 +6,9 @@ import {FaSearch, FaUserAlt, FaSignOutAlt } from 'react-icons/fa';
 import { BsFillCartFill, BsInfoSquareFill } from 'react-icons/bs';
 import { MdBookmarkBorder} from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import { isVariableTrue } from '../Welcom_Page/welcome';
 
 const Header = ({ onSearch }) => {
-
+    const isVariableTrue = JSON.parse(sessionStorage.getItem('isVariableTrue'))
     const [searchTerm, setSearchTerm] = useState('');
   
     const handleSearch = (event) => {
@@ -19,7 +18,6 @@ const Header = ({ onSearch }) => {
     };
   
 
-    console.log("isvariabletrue response: ", isVariableTrue)
 
     function refreshPage() {
         location.reload();
@@ -31,7 +29,7 @@ const Header = ({ onSearch }) => {
                 {
                     // There is Name of website Left side
                 }
-                {isVariableTrue ? (
+                {isVariableTrue == true ? (
                     <Link to="/browse">
                         <label className='Name'>
                             MEORA<br/>DEBI
@@ -69,14 +67,12 @@ const Header = ({ onSearch }) => {
                         <label ><Link to='/Browse/mycarts' className='myCart'><BsFillCartFill/></Link></label>
                         <label className='signinlabel'><Link className='SignIn' to='/browse'><FaUserAlt/></Link></label>
                         <div className='hideLabels'>
-                            {/* <Link to=''> */}
-                                <Link to='MyProfile' className='profile'>
+                                <Link to='/Browse/MyProfile' className='profile'>
                                     &nbsp;<BsInfoSquareFill/>&ensp;Profile
                                 </Link>
-                            {/* </Link> */}
                             
                             <Link to='/'>
-                                <label onClick={() => refreshPage()} className='signOut'>
+                                <label onClick={() => {sessionStorage.clear}} className='signOut'>
                                     &nbsp;<FaSignOutAlt/>&ensp;SignOut
                                 </label>
                             </Link>

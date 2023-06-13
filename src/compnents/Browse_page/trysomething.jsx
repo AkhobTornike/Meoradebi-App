@@ -30,17 +30,6 @@ function trysomething() {
       // Update localStorage whenever cartData changes
       localStorage.setItem('usersCart', JSON.stringify(cartData));
     }, [cartData]);
-  
-    const addToCart = () => {
-      const newItem = {
-        id: 1,
-        userId: `${currentprod[0].id}`,
-        date: `23/05/2023-15:20`,
-        products: {productId: `${currentuser[0].id}`, quantitiy: 1}
-      };
-       // Example data, you can change it as per your requirements
-      setCartData([...cartData, newItem]);
-    };
 }
 
 export default trysomething

@@ -6,11 +6,13 @@ export let isVariableTrue = false;
 export let signedInUserId = '';
 
 export default function Welcome() {
+  sessionStorage.setItem('isVariableTrue', false)
+  sessionStorage.setItem('signedInUserId', '')
   const [users, setUsers] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [variable, setVariable] = useState(isVariableTrue)
+  const [variable, setVariable] = useState(sessionStorage.getItem('isVariableTrue'))
 
   useEffect(() => {
     const storedUsersData = localStorage.getItem('usersData');
@@ -44,9 +46,8 @@ export default function Welcome() {
     if (user) {
       console.log('User signed in successfully');
       navigate('./browse')
-      signedInUserId = user.id;
-      setVariable(true)
-      isVariableTrue = true;
+      sessionStorage.setItem('signedInUserId', user.id)
+      sessionStorage.setItem('isVariableTrue', true)
     } else {
       setError('Invalid email or password');
       setEmail('');
