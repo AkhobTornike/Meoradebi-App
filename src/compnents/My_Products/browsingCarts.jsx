@@ -26,19 +26,22 @@ function CartBrowsing() {
     <>
       <Header />
       <div className="parentBox">
+        <div className="buttons">
+      <button className="clear-button">Clear</button>
+      <Link to='/Browse/BuyCart' className='BackMain' ><button type="submit" className="buy-button">Buy</button></Link>
+      </div>
         {evenCardData.length !== 0 ? (
           evenCardData.map((product) => {
             const validprod = productdata.find((prod) => prod.id === product.products.productId);
             return (
               <div className="cartchildBox" key={validprod.id}>
-                <button>Clear</button>
                 <img src={validprod.image} alt={validprod.title} />
                 <div className="carttextContainer">
                   <h6>Title: {validprod.title}</h6>
                   <h6>Price: {validprod.price}</h6>
                   <h6 className="cartQuantity">Quantity: {product.products.quantity}</h6>
                 </div>
-                <Link to='/Browse/BuyCart' className='BackMain' ><button type="submit">Buy</button></Link>
+                <button className="delete-button">delete</button>
               </div>
             );
           })

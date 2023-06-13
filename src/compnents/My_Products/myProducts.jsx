@@ -92,11 +92,12 @@ const MyProducts = () => {
         <input
           type="file"
           name="image"
+          className="image"
         //   value={newdata.image}
           onChange={handleChange}
         /><br/>
         <Link to='/browse'>
-          <input onClick={() => AddNew()} type="button" value="Submit" />
+          <input onClick={() => AddNew()} className="submit-product" type="button" value="Submit" />
         </Link>
         </div>
     </>

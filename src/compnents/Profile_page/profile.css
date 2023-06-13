@@ -1,0 +1,27 @@
+.profile-info{
+	position: absolute;
+	top: 20%;
+	left: 33%;
+	color: black;
+	text-align: center;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 20px;
+	
+}
+ td, th{
+	border: 1px solid #ddd;
+	border-radius: 20px;
+  padding: 8px;
+  width: 250px;
+  
+ }
+ th{
+	padding-top: 12px;
+  padding-bottom: 12px;
+   
+ 
+ }
+ h1{
+	color: rgba(185,235,80,255);
+ }

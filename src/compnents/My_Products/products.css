@@ -92,7 +92,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 110px;
-    margin-left: 5.25%;
+    margin-left: 30%;
     width: 1150px;
     height: 350px;
     background-color: rgba(185,235,80,255);
@@ -116,7 +116,7 @@
   .cartQuantity {
     font-size: x-large;
     font-family: 'Times New Roman', Times, serif;
-    margin-left: 20px;
+   
   }
 
   .doneIcon {
@@ -143,4 +143,46 @@
     right: 38%;
     bottom: 50%;
     color: red;
+  }
+
+  .delete-button{
+    height: 50px;
+    margin-top: 280px;
+    margin-left: 220px;
+  }
+
+  .carttextContainer{
+    padding: 20px;
+    font-size: 25px;
+  }
+  .buttons{
+    position: fixed;
+    top: 870px;
+    left: 1700px;
+    
+  }
+ 
+
+  .clear-button{
+    background-color: rgb(253, 126, 126);
+ 
+  }
+  .buy-button{
+    background-color: rgba(185,235,80,255);
+    
+  }
+
+  .addProduct input{
+     color: black;
+  }
+ 
+  .submit-product{
+    background-color: rgba(185,235,80,255);
+  }
+  .submit-product:hover{
+    background-color: rgb(125, 201, 26);
+  }
+  .image{
+ 
+   border-radius: 0px;
   }
