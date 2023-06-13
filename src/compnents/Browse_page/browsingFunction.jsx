@@ -1,6 +1,5 @@
   import React, { useEffect, useState } from 'react';
   import "./browse.css"
-  import { signedInUserId, isVariableTrue } from '../Welcom_Page/welcome.jsx';
   import Header from '../Header/Header';
 
   import {FaPlusCircle} from 'react-icons/fa';
@@ -9,8 +8,7 @@
   import { Link } from 'react-router-dom';
 
   function Browsing() {
-    console.log("userid")
-    console.log(signedInUserId)
+    const signedInUserId = sessionStorage.getItem('signedInUserId')
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');

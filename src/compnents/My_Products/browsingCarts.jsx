@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./products.css";
-import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
-import { signedInUserId } from '../Welcom_Page/welcome';
 import { Link } from "react-router-dom";
 
 function CartBrowsing() {
+  const signedInUserId = sessionStorage.getItem('signedInUserId')
   const [carddata, setCarddata] = useState([]);
   const [productdata, setProductdata] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const cardData = localStorage.getItem("cardData");
@@ -22,23 +20,37 @@ function CartBrowsing() {
 
   const evenCardData = carddata ? carddata.filter((card) => card.userId === signedInUserId) : [];
 
+  const handleClearCart = () => {
+    const updatedCardData = carddata.filter((card) => card.userId !== signedInUserId);
+    localStorage.setItem("cardData", JSON.stringify(updatedCardData));
+    setCarddata(updatedCardData);
+  };
+
+  const handleDeleteProduct = (productId) => {
+    const updatedCardData = carddata.filter((card) => card.userId === signedInUserId && card.products.productId !== productId);
+    localStorage.setItem("cardData", JSON.stringify(updatedCardData));
+    setCarddata(updatedCardData);
+  };
+
+
   return (
     <>
       <Header />
       <div className="parentBox">
+        <Link to='/Browse/BuyCart' className='BackMain' ><button type="submit">Buy</button></Link>
+        <button className="clearButton" onClick={() => handleClearCart()}>Clear</button>
         {evenCardData.length !== 0 ? (
           evenCardData.map((product) => {
             const validprod = productdata.find((prod) => prod.id === product.products.productId);
-            return (
+            return ( 
               <div className="cartchildBox" key={validprod.id}>
-                <button>Clear</button>
                 <img src={validprod.image} alt={validprod.title} />
                 <div className="carttextContainer">
                   <h6>Title: {validprod.title}</h6>
                   <h6>Price: {validprod.price}</h6>
                   <h6 className="cartQuantity">Quantity: {product.products.quantity}</h6>
+                  <button onClick={() => handleDeleteProduct(validprod.id)}>Delete</button>
                 </div>
-                <Link to='/Browse/BuyCart' className='BackMain' ><button type="submit">Buy</button></Link>
               </div>
             );
           })
