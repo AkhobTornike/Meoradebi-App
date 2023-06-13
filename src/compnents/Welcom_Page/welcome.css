@@ -24,7 +24,6 @@
     font-size: 90px;
     font-family:'Chau Philomene One' ;
     position: relative;
-    /* left: -10%; */
     top: 30px;
 }
 
@@ -62,6 +61,7 @@
     color: white;
     opacity: 1; /* Firefox */
     font-size: 25px;
+    margin-left: 150px;
   }
   
 

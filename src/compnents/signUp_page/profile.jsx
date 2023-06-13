@@ -25,13 +25,18 @@ function MyProfile() {
             {evenUserData.map((user) => {
                 return (
                     <>
-                        <p>{user.address}</p>
-                        <p>{user.email}</p>
-                        <p>{user.phone}</p>
-                        <p>{user.username}</p> 
-                        <p>{user.name.firstname}</p>
-                        <p>{user.name.lastname}</p>
-                        <p>{user.password}</p>
+          <React.Fragment key={user.id}>
+            <p>{user.address.city}</p>
+            <p>{user.address.street}</p>
+            <p>{user.address.number}</p>
+            <p>{user.address.zipcode}</p>
+            <p>{user.email}</p>
+            <p>{user.phone}</p>
+            <p>{user.username}</p>
+            <p>{user.name.firstname}</p>
+            <p>{user.name.lastname}</p>
+            <p>{user.password}</p>
+          </React.Fragment>
                     </>
                 )
             })}
