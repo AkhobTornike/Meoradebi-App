@@ -65,45 +65,47 @@ const BuyCart = () => {
   return (
     <>
         <Header/>
-        <input 
-            type="text" 
-            className='cardNumber' 
-            placeholder='1122 3344 5566 7788'
-            name='cardNumber'
-            value={cardNumber}
-            onChange={(e) => handleCardNumberChange(e)}
-            maxLength={16}
-            required
-        />
-        <input 
-            type="text" 
-            className='expirationDate' 
-            placeholder='DD/MM'
-            name='expirationDate'
-            value={expirationDate}
-            onChange={handleExpirationDateChange}
-            maxLength={5}
-            required
-        />
-        <input 
-            type="text" 
-            className='cvc' 
-            placeholder='***'
-            name='cvc'
-            value={formatCVC()}
-            onChange={handleCVCChange}
-            maxLength={3}
-            required
-        />
-      {isFormValid ? (
-        <Link to="/Browse" className="BackMain">
-          <button type="submit">Submit</button>
-        </Link>
-      ) : (
-        <button onClick={handleSubmit} type="button">
-            Submit
-        </button>
-      )} 
+        <div className='parrentDiv'>
+          <input 
+              type="text" 
+              className='cardNumber' 
+              placeholder='1122 3344 5566 7788'
+              name='cardNumber'
+              value={cardNumber}
+              onChange={(e) => handleCardNumberChange(e)}
+              maxLength={16}
+              required
+          />
+          <input 
+              type="text" 
+              className='expirationDate' 
+              placeholder='DD/MM'
+              name='expirationDate'
+              value={expirationDate}
+              onChange={handleExpirationDateChange}
+              maxLength={5}
+              required
+          />
+          <input 
+              type="text" 
+              className='cvc' 
+              placeholder='***'
+              name='cvc'
+              value={formatCVC()}
+              onChange={handleCVCChange}
+              maxLength={3}
+              required
+          />
+          {isFormValid ? (
+            <Link to="/Browse" className="BackMain">
+              <button type="submit">Submit</button>
+            </Link>
+          ) : (
+            <button className='buyButton' onClick={handleSubmit} type="button">
+                Submit
+            </button>
+          )} 
+        </div>
         </>
   )
 }

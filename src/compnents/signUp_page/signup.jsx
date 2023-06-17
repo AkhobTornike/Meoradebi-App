@@ -2,12 +2,10 @@ import { useState } from 'react';
 import './signup.css'
 import { Link } from 'react-router-dom'
 
-
 export default function SignUp() {
-    const storeUsersData = JSON.parse(localStorage.getItem('usersData'))
+    const storeUsersData = JSON.parse(localStorage.getItem('usersData'));
     const lastUserID = storeUsersData ? storeUsersData[storeUsersData.length - 1].id : 10;
-    const [counter, setCounter] = useState(lastUserID)
-    
+    const [counter, setCounter] = useState(lastUserID);
 
     const [newuser, setNewuser] = useState({
         address: "",
@@ -17,74 +15,57 @@ export default function SignUp() {
         name: {firstname: "", lastname: ""},
         phone: "",
         username: "",
-
-    })
+    });
 
     const [passwordError, setPasswordError] = useState(false);
-
 
     const handleChange = (e) => {
         const { name, value } = e.target;
     
         if (name === 'firstname' || name === 'lastname') {
-          setNewuser((prevUser) => ({
-            ...prevUser,
-            name: {
-              ...prevUser.name,
-              [name]: value,
-            },
-          }));
+            setNewuser((prevUser) => ({
+                ...prevUser,
+                name: {
+                    ...prevUser.name,
+                    [name]: value,
+                },
+            }));
         } else {
-          setNewuser((prevUser) => ({
-            ...prevUser,
-            [name]: value,
-          }));
+            setNewuser((prevUser) => ({
+                ...prevUser,
+                [name]: value,
+            }));
         }
-      };
+    };  
 
-      const validateForm = () => {
-        const requiredFields = ['firstname', 'lastname', 'email', 'password', 'address', 'phone', 'username'];
-    
-        for (const field of requiredFields) {
-          if (!newuser[field].trim()) {
-            return false;
-          }
-        }
-    
-        return true;
-      };
-
-      const Addnew = () => {
-        if (!validateForm()) {
-          alert('Please fill in all fields');
-          return;
-        }
-        
+    const Addnew = () => {
         if (newuser.password !== newuser.confirmPassword) {
-          alert('Passwords do not match');
-          return;
+            setPasswordError(true);
+            return;
         }
-    
-        const { confirmPassword, ...userWithoutConfirmPassword } = newuser;
-    
-        const updateUser = [
-          ...storeUsersData,
-          {
-            ...userWithoutConfirmPassword,
-            id: counter + 1,
-          },
-        ];
-        setCounter(counter + 1);
-        console.log(updateUser);
-        localStorage.setItem('usersData', JSON.stringify(updateUser));
-      };
+
+        const updatedUserList = [...storeUsersData, newuser];
+        localStorage.setItem('usersData', JSON.stringify(updatedUserList));
+
+        // Perform any other necessary actions after adding the user
+
+        // Reset the form
+        setNewuser({
+            address: "",
+            email: "",
+            id: "",
+            password: "",
+            name: { firstname: "", lastname: "" },
+            phone: "",
+            username: "",
+        });
+    };
+  
 
     return (
-        <>            
-
-            <div className='ParrenSignIn'>
-
-                <p className='welcome'>Welcome</p>
+        <>
+            <div className='ParrenSignUp'>
+                <p className='welcome_signUp'>Welcome</p>
                 <div className='namediv'>
                     <input 
                         type="text" 
@@ -96,13 +77,13 @@ export default function SignUp() {
                         required
                     />
                     <input 
-                            type="text" 
-                            className='lastname' 
-                            placeholder=' lastname : '
-                            name='lastname'
-                            value={newuser.name.lastname}
-                            onChange={handleChange}
-                            required
+                        type="text" 
+                        className='lastname' 
+                        placeholder=' lastname : '
+                        name='lastname'
+                        value={newuser.name.lastname}
+                        onChange={handleChange}
+                        required
                     />
                 </div>
                 <input 
@@ -159,14 +140,16 @@ export default function SignUp() {
                     onChange={handleChange}
                     required
                 />
-                <a href="./">
-                <input className='signUp' onClick={() => Addnew()} type="button" value="Sign Up" />
-                </a>
+                <input 
+                    className='signUp' 
+                    onClick={Addnew} 
+                    type="button" 
+                    value="Sign Up"
+                />
                 <br/><br/>
-                <Link to='/' className='BackMain' href>already have an account?</Link>
+                <Link to='/' className='BackMain'>already have an account?</Link>
             </div>
             <div className='GreenLabel'><p className='meoradebi'>MEORA<br></br>DEBI</p></div>
-
         </>
-    )
+    );
 }

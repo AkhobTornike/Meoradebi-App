@@ -63,7 +63,7 @@ const Header = ({ onSearch }) => {
                 {/* There is navigation menu */}
                 {isVariableTrue ? (
                     <div className='nav'>                
-                        <label ><Link to='/myProduct' className='myProd'><MdBookmarkBorder/></Link></label>
+                        {/* <label ><Link to='/Browse/MyProfile' className='myprof'><MdBookmarkBorder/></Link></label> */}
                         <label ><Link to='/Browse/mycarts' className='myCart'><BsFillCartFill/></Link></label>
                         <label className='signinlabel'><Link className='SignIn' to='/browse'><FaUserAlt/></Link></label>
                         <div className='hideLabels'>
@@ -80,7 +80,7 @@ const Header = ({ onSearch }) => {
                     </div>
                 ) : (
                     <div className='nav'>                
-                        <label ><Link to='/' className='myProd'><MdBookmarkBorder/></Link></label>
+                        {/* <label ><Link to='/' className='myProd'><MdBookmarkBorder/></Link></label> */}
                         <label ><Link to='/' className='myCart'><BsFillCartFill/></Link></label>
                         <label className='SignInUntill' ><Link className='SignInUntill' to='/'><FaUserAlt/></Link></label>
                         <div className='hideLabels'>

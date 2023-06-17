@@ -1,3 +1,12 @@
+body {
+  margin: 0;
+  display: flex;
+  background-color: #eaeaea;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif, Chau Philomene One;
   line-height: 1.5;
@@ -15,8 +24,567 @@
  
 }
 
-.addProduct{
+/* W E L C O M E    P A G E */
+  /* LEFT BOX */
+.GreenLabel {
+  background-color: rgba(185,235,80,255);
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+}
+
+.meoradebi {
+  color: white;
+  text-align: center;
+  margin-top: 40%;
+  font-size: 130px;
+  font-family: 'JejuHallasan';
+  position: fixed;
+  bottom: -8%;
+  left: 3%;
+} 
+
+  /* RIGHT BOX */
+.ParrenSignIn{
+  float: right;
+  position: fixed;
+  left: 65%;
+  top: 10%;
+}
+
+.welcome {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: -40px;
+  text-align: center;
+  color: rgba(185,235,80,255);
+  font-size: 90px;
+  font-family:'Chau Philomene One' ;
+}
+
+.UserName {
+  margin: 5px;
+  background-color: rgba(224,255,158,255);
+  width: 250px;
+  height: 30px;
+  color: black;
+  border-radius: 42px;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.UserName::placeholder { 
+  color: white;
+  opacity: 1;
+  font-size: 25px;
+  margin-left: 150px;
+}
+
+.Password {
+  margin: 5px;
+  background-color: rgba(224,255,158,255);
+  width: 250px;
+  height: 30px;
+  color: black;
+  border-radius: 42px;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.Password::placeholder { 
+  color: white;
+  opacity: 1; 
+  font-size: 25px;
+  margin-left: 100px;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.error-message {
+  color: black; 
+  padding: 0px;
+}
+
+.signIn {
+  margin-left: 55px;
+  margin-top: 10px;
+  width: 150px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: rgba(185,235,80,255);
+  font-family:'Chau Philomene One' ;
+  font-size:20px;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.options{
+  text-align: center;
+}
+
+.Fpassword, .CaNaccount {
+  color: rgba(185,235,80,255);
+  margin-left: -35px;
+}
+
+  /* S I G N  U P     P A G E */
+
+  .welcome_signUp {
+    margin-top: 40px;
+    margin-bottom: 5px;
+    margin-left: -180px;
+    text-align: center;
+    color: rgba(185,235,80,255);
+    font-size: 90px;
+    font-family:'Chau Philomene One' ;
+  }
+
+  .ParrenSignUp{
+    float: right;
+    position: fixed;
+    left: 65%;
+    top: 2%;
+  }
+
+  .namediv {
+    display: flex;
+    margin-top: 10px;
+    margin-left: -40px;
+    margin-bottom: 10px;
+  }
+  
+  .firstname, .lastname {
+  margin-right: 10px;
+  background-color: rgba(224,255,158,255);
+  width: 50x;
+  height: 30px;
+  color: black;
+  border-radius: 42px;
+  border: none;
+  outline: none;
+  text-align: center;
+  }
+
+  .firstname, .lastname ::placeholder { 
+    color: black;
+    opacity: 1;
+  
+  }
+
+.password, .email, .address, .phone, .username {
+    margin: 3px;
+    background-color: rgba(224,255,158,255);
+    width: 250px;
+    height: 30px;
+    color: black;
+    border-radius: 42px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.password, .email, .address, .phone, .username ::placeholder { 
+    color: black;
+    opacity: 1; 
+}
+
+.signUp {
+    margin-left: 55px;
+    margin-top: 10px;
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: rgba(185,235,80,255);
+    font-family:'Chau Philomene One' ;
+    font-size:20px;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.BackMain{
+  color: rgba(185,235,80,255);
+  margin-left: 45px;
+}
+
+  /* S I G N  U P     P A G E */
+
+
+
+  /* F O R G O T    P A G E */
+
+  .Sent {
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: rgba(185,235,80,255);
+    font-family:'Chau Philomene One' ;
+    font-size:20px;
+    color: white;
+    position: absolute;
+    left: 28%;
+    border: none;
+    outline: none;
+    text-align: center;
+  }
+
+  .ComeOn {
+    color: red;
+    font-size: 30px;
+    font-family:'Chau Philomene One' ;
+    position: fixed;
+    top: 70%;
+    left: 72.2%;
+  }
+
+  /* F O R G O T    P A G E */
+
+/* W E L C O M E    P A G E */
+
+
+
+/* H E A D E R */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightgray;
+  padding: 10px;
+  z-index: 9999; 
+  background-color: rgba(185,235,80,255);
+}
+
+.Name {
+  font-weight: bold;
+  font-family:'JejuHallasan';
+  font-size: 30px;
+  color: white;
+  display: inline-block;
+  margin-left: 25px;
+}
+
+.SearchLabel {
+  display: flex;
+  align-items: center;
+  margin-left: 285px;
+}
+
+.Search {
+  width: 300px;
+  height: 30px;
+  border-radius: 42px;
+  background-color: white;
+  text-align: center;
+  border: none;
+  outline: none;
+  color: black;
+}
+
+.IconSearch {
+  font-size: 20px;
+  margin-left: 2px;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  gap: 50px;
+  margin-right: 20px;
+}
+
+.myCart,
+.myProf,
+.SignIn {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  color: white;
+}
+
+.SignInUntill {
+  font-weight: bold;
+  text-decoration: none;
+  color: red;
+}
+
+.hideLabels {
+  width: 90px;
+  height: 50px;
+  border: 1px solid black;
+  position: fixed;
+  right: 15px;
+  top: 64px;
+  display: none;
+}
+
+.signinlabel:hover + .hideLabels,
+.hideLabels:hover,
+.SignInUntill:hover + .hideLabels{
+  display: block;
+  background-color: white;
+}
+
+Link{
+  color: black;
+}
+/* H E A D E R */
+
+/* B R O W S E    P A G E */
+
+.parrentBox {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 110px;
+  
+}
+
+.childBox {
+  width: calc(25% - 100px);
+  height: 250px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 17px;
+  overflow: hidden;
+}
+
+.childBox img, 
+.childBox h6 {
+  max-width: 90%;max-height: 50%;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.textContainer {
+  display: flex;
+}
+
+.seeMoreIcon {
+  width: 25px;
+  height: 25px;
+  color: rgba(185,235,80,255);
+  position: relative;
+  left: 170px;
+  top: 15px;
+}
+
+.addCartIcon {
+  width: 25px;
+  height: 25px;
+  color: rgba(185,235,80,255);
+  position: relative;
+  left: 100px;
+  top: 15px;
+}
+
+/* B R O W S E    P A G E */
+
+
+
+/* U S E R    P R O F I L E   P A G E */
+
+.profile-info{
+	position: absolute;
+	top: 20%;
+	left: 33%;
+	color: black;
+	text-align: center;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+td, th{
+	border: 1px solid #ddd;
+	border-radius: 20px;
+  padding: 8px;
+  width: 250px; 
+ }
+
+ th{
+	padding-top: 12px;
+  padding-bottom: 12px; 
+}
+
+ h1{
+	color: rgba(185,235,80,255);
+}
+
+/* U S E R    P R O F I L E   P A G E */
+
+
+/* A D D    P R O D U C T   I N   C A R T */
+
+.doneIcon {
+  width: 50px;
+  height: 50px;
+  color: white;
+  position: relative;
+  top: 55%;
+  left: 350%;
+}
+
+/* .linkDoneIcon {
+  position: fixed;
+  right: 80px;
+  bottom: 90px;
+} */
+
+/* A D D    P R O D U C T   I N   C A R T */
+
+
+
+/* C A R T    B R O W S I N G   P A G E */
+
+  /* IF NO PROUDCT */
+  .noproduct {
+    margin-left: 400px;
+  }
+
+  /* ELSE */
+  .parentBox{
+    margin-top: 150px;
+    margin-left: -20px;
+    margin-bottom: 100px;
+  }
+
+  .buttons{
+    position: fixed;
+    top: 170px;
+    left: 1100px;
+  }
+
+  .clear-button{
+    position: fixed;
+    left: 92%;
+    background-color: rgb(253, 126, 126);
+  }
+
+  .buy-button{
+    position: fixed;
+    left: 5%;
+    background-color: rgba(185,235,80,255);
+  }
+
+  .cartchildBox {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 110px;
+    margin-left: 18%;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(185,235,80,255);
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .cartchildBox img {
+    max-width: 50%;
+  }
+
+   .carttextContainer{
+    font-size: 25px;
+    margin-left: 2%;
+  }
+
+  .cartQuantity {
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .delete-button{
+    height: 10%;
+    margin-top: 34%;
+    margin-left: 14%;
+  }
+
+  button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.3em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  
+  button:hover {
+    border-color: #646cff;
+  }
+
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+/* C A R T    B R O W S I N G   P A G E */
+
+
+
+/* P R O F I L E    P A G E */
+
+.profile-info{
+	position: absolute;
+	top: 20%;
+	left: 33%;
+	color: black;
+	text-align: center;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 20px;
+	
+}
+ td, th{
+	border: 1px solid #ddd;
+	border-radius: 20px;
+  padding: 8px;
+  width: 250px;
+  
+ }
+ th{
+	padding-top: 12px;
+  padding-bottom: 12px;
    
+ 
+ }
+ h1{
+	color: rgba(185,235,80,255);
+ } 
+
+/* P R O F I L E    P A G E */
+
+.parrentDiv {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  margin-top: 110px;
+  position: absolute;
+  left: 40%;
+  bottom: 30%;
+}
+
+.cardNumber, 
+.expirationDate,
+.cvc,
+.buyButton {
+  margin: 15px;
+}
+
+.addProduct{
     margin: 0px 770px;
     text-align: center;
 }
@@ -29,8 +597,9 @@ a {
 a:hover {
   color: #535bf2;
 }
+
 input{
-  margin: 5px;
+    margin: 5px;
     background-color: rgba(224,255,158,255);
     width: 250px;
     height: 30px;
@@ -40,14 +609,6 @@ input{
     border: none;
     outline: none;
     text-align: center;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
