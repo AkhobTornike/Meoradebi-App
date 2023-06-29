@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./products.css";
+// import "./products.css";
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './forgot.css'
+// import './forgot.css'
 import ReceivePassword from './receivePassword'
 
 export default function Forgot() {

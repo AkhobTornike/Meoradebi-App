@@ -136,7 +136,7 @@ body {
   /* S I G N  U P     P A G E */
 
   .welcome_signUp {
-    margin-top: 40px;
+    margin-top: -15px;
     margin-bottom: 5px;
     margin-left: -180px;
     text-align: center;
@@ -155,7 +155,7 @@ body {
   .namediv {
     display: flex;
     margin-top: 10px;
-    margin-left: -40px;
+    margin-left: -145px;
     margin-bottom: 10px;
   }
   

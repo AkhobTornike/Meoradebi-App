@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import './Header.css'
+// import './Header.css'
 
 import {FaSearch, FaUserAlt, FaSignOutAlt } from 'react-icons/fa';
 import { BsFillCartFill, BsInfoSquareFill } from 'react-icons/bs';

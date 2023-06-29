@@ -1,5 +1,5 @@
 // import "./browse.css"
-import "./products.css"
+// import "./products.css"
 
 import { useParams } from "react-router"
 import { BsCartPlus } from 'react-icons/bs';

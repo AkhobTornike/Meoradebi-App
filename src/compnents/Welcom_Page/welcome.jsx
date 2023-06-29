@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import './welcome.css'
+// import './welcome.css'
 
 export let isVariableTrue = false;
 export let signedInUserId = '';

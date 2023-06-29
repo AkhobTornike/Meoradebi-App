@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './browse.css'
+// import './browse.css'
 
 
 import Browsing from './browsingFunction';

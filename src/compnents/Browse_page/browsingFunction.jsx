@@ -1,5 +1,5 @@
   import React, { useEffect, useState } from 'react';
-  import "./browse.css"
+  // import "./browse.css"
   import Header from '../Header/Header';
 
   import {FaPlusCircle} from 'react-icons/fa';
